@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>⋆ ˚｡⋆ 오래오래 붙어있는 것들 — Y2K 디지털 스크랩북</title>
+  <style>
+    /* Y2K kitsch vibes: pastel gradients, glossy buttons, pixel-ish headings */
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@300;700&display=swap');
+    :root{
+      --bg1: #fff3e6; /* warm paper */
+      --accent1: #ff6fb5; /* pink */
+      --accent2: #7be7ff; /* aqua */
+      --accent3: #ffd66b; /* sun */
+      --shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+    html,body{height:100%;margin:0;font-family:Nunito,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+    body{
+      background: radial-gradient(circle at 10% 20%, rgba(255,255,255,0.8), transparent 10%),
+                  linear-gradient(135deg, var(--bg1) 0%, #ffeedd 40%, #fff9f0 100%);
+      display:flex;align-items:center;justify-content:center;padding:32px;
+      color:#2b2b2b;
+    }
+    .card{
+      width:min(960px,95%);
+      background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,250,245,0.95));
+      border-radius:18px;padding:28px;box-shadow:var(--shadow);
+      border: 3px solid rgba(255,255,255,0.6);
+      position:relative;overflow:hidden;
+    }
+    h1{
+      font-family:'Press Start 2P',monospace;font-size:20px;margin:0 0 8px;color:#3b1f3b;
+      text-shadow: 2px 2px 0 rgba(255,255,255,0.6), 6px 6px 0 rgba(255,223,255,0.08);
+    }
+    p.lead{margin:6px 0 18px;color:#5b3b47}
+
+    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+    .badge{background:linear-gradient(180deg,var(--accent2),#b2f0ff);padding:8px 12px;border-radius:999px;font-weight:700;color:#08313a;box-shadow:0 6px 18px rgba(123,231,255,0.15), inset 0 -2px 0 rgba(0,0,0,0.04)}
+
+    .preview{
+      display:grid;grid-template-columns:1fr 220px;gap:18px;align-items:start;
+    }
+    .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.5));
+      border-radius:12px;padding:16px;border:1px dashed rgba(60,30,60,0.06);
+    }
+    .canvas{
+      height:420px;border-radius:10px;background:linear-gradient(180deg,#fffefc,#fff7f0);
+      border:6px double rgba(255,200,220,0.12);position:relative;overflow:hidden;
+      box-shadow:0 8px 30px rgba(0,0,0,0.06) inset;
+    }
+    .sticker{position:absolute;width:96px;height:96px;border-radius:12px;background:linear-gradient(135deg,var(--accent1),#ffd1ea);display:flex;align-items:center;justify-content:center;color:#330022;font-weight:700;box-shadow:0 8px 24px rgba(0,0,0,0.18), 0 0 18px rgba(255,175,210,0.18);transform:rotate(-6deg)}
+    .sticker.small{width:72px;height:72px}
+
+    .sidebar{display:flex;flex-direction:column;gap:10px}
+    .btn{
+      display:inline-block;padding:10px 12px;border-radius:12px;background:linear-gradient(180deg,var(--accent3),#ffd89a);color:#3b1700;font-weight:800;text-decoration:none;box-shadow:0 8px 18px rgba(255,214,120,0.16);
+    }
+
+    footer{margin-top:18px;font-size:12px;color:#6b4b5b}
+
+    /* floating sparkles */
+    .sparkle{position:absolute;width:12px;height:12px;border-radius:3px;background:linear-gradient(45deg,#fff,#ffd6f2);filter:drop-shadow(0 2px 6px rgba(255,150,200,0.18));opacity:0.9}
+    .sparkle.x1{left:-20px;top:20px;transform:rotate(22deg)}
+    .sparkle.x2{right:-10px;top:80px;transform:rotate(-8deg)}
+    .sparkle.x3{right:40px;bottom:-14px;transform:rotate(10deg)}
+
+    @media(max-width:720px){
+      .preview{grid-template-columns:1fr}
+      .sidebar{flex-direction:row}
+      h1{font-size:16px}
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="sparkle x1"></div>
+    <div class="sparkle x2"></div>
+    <div class="sparkle x3"></div>
+
+    <h1>⋆ ˚｡⋆ 오래오래 붙어있는 것들</h1>
+    <p class="lead">Y2K 감성의 디지털 스크랩북 — 드래그 앤 드롭으로 나만의 다이어리를 꾸며보세요.</p>
+
+    <div class="badges">
+      <div class="badge">HTML</div>
+      <div class="badge">CSS</div>
+      <div class="badge">Vanilla JS</div>
+      <div class="badge">Y2K</div>
+    </div>
+
+    <div class="preview">
+      <div class="panel">
+        <div class="canvas" id="canvas" aria-label="scrap canvas">
+          <div class="sticker" style="left:24px;top:28px;">🌸</div>
+          <div class="sticker small" style="left:140px;top:60px;transform:rotate(8deg)">⭐</div>
+          <div class="sticker" style="left:260px;top:120px;transform:rotate(-4deg);background:linear-gradient(135deg,#7be7ff,#bfefff)">❣️</div>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <a class="btn" href="https://github.com/hari0624-dot/sw/blob/main/README.md" target="_blank" rel="noopener">프로젝트 문서</a>
+        <a class="btn" href="https://github.com/hari0624-dot/sw" target="_blank" rel="noopener">소스코드 보기</a>
+      </aside>
+    </div>
+
+    <footer>
+      배포: GitHub Pages — 예상 주소: https://hari0624-dot.github.io/sw
+    </footer>
+  </div>
+
+  <script>
+    // small UX: make existing stickers draggable using pointer events if src/drag.js not loaded yet
+    (function(){
+      const stickers = document.querySelectorAll('.sticker');
+      const canvas = document.querySelector('#canvas');
+      let dragging = null, offset = {x:0,y:0};
+
+      stickers.forEach(s => {
+        s.style.position='absolute';
+        s.addEventListener('pointerdown', (e)=>{
+          dragging = s;
+          const rect = s.getBoundingClientRect();
+          const cRect = canvas.getBoundingClientRect();
+          offset.x = e.clientX - rect.left;
+          offset.y = e.clientY - rect.top;
+          s.setPointerCapture(e.pointerId);
+          e.preventDefault();
+        });
+      });
+
+      document.addEventListener('pointermove', (e)=>{
+        if(!dragging) return;
+        const cRect = canvas.getBoundingClientRect();
+        let left = e.clientX - cRect.left - offset.x;
+        let top = e.clientY - cRect.top - offset.y;
+        left = Math.max(0, Math.min(left, canvas.clientWidth - dragging.offsetWidth));
+        top  = Math.max(0, Math.min(top, canvas.clientHeight - dragging.offsetHeight));
+        dragging.style.left = left + 'px';
+        dragging.style.top = top + 'px';
+      });
+
+      document.addEventListener('pointerup', (e)=>{
+        if(!dragging) return;
+        try{ dragging.releasePointerCapture && dragging.releasePointerCapture(e.pointerId);}catch(e){}
+        dragging = null;
+      });
+    })();
+  </script>
+</body>
+</html>
